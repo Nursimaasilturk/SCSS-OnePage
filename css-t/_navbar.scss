@@ -1,0 +1,78 @@
+@import "_variables";
+@import "_media_queries";
+
+%align-center {
+  display: flex;
+  align-items: center;
+}
+nav {
+  width: 100%;
+  font-family: $page-font;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem calc((100vw - 1200px) / 2);
+  z-index: 10;
+  position: relative;
+
+  .navbar__logo {
+    height: 100%;
+    width: 20%;
+    @extend %align-center;
+    a {
+      color: $primary-color;
+      font-size: $header-font-size;
+      font-weight: $header-fontweight;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+  .navbar__bars {
+    opacity: 0;
+    @include tablet {
+      color: $primary-color;
+      opacity: 1;
+      position: absolute;
+      top: 25%;
+      right: 5%;
+      font-size: $header-font-size;
+    }
+  }
+  .navbar__menu {
+    width: 60%;
+    @extend %align-center;
+    list-style: none;
+    text-align: center;
+    margin-right: 1%;
+    justify-content: space-between;
+    @include tablet {
+      display: none;
+    }
+    &--link {
+      text-decoration: none;
+      color: $secondary-color;
+      font-size: $article-font-size;
+
+      &:hover {
+        color: $hover-effect;
+        transition: all 0.4s ease;
+        border-bottom: 3px solid $hover-effect;
+      }
+    }
+    #button {
+      border-radius: $border-radius;
+      color: white;
+      background-color: $primary-color;
+      padding: 0.4rem 0.7rem;
+      border: none;
+      outline: none;
+
+      &:hover {
+        color: $hover-effect;
+        background-color: transparent;
+        border: 2px solid $hover-effect;
+      }
+    }
+  }
+}
