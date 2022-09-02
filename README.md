@@ -1,4 +1,4 @@
-#SCSS
+# SCSS-SASS
 
 > The Project is built to SCSS-SASS skills
 
